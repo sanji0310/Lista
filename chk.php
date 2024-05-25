@@ -151,6 +151,6 @@ curl_close($ch);
 ob_flush();
 
 //echo $result1;
-//echo $result2;
+echo $result2;
 ////////////////////////////===RAW BY HARIS===////////////////////////////
 ?>

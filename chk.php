@@ -128,6 +128,7 @@ $result2 = curl_exec($ch);
 
 ////////////////////////////===[Responses CVV]===////////////////////////////
 
+sleep(10);
 if
 (strpos($result2,  'Thank you for your Payment.')) {
   echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 1$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";

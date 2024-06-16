@@ -40,7 +40,7 @@ function rebootproxys()
 $poxySocks4 = rebootproxys();
 */
 
-$auth = "gloosmoke11-rotate:gloosmoke";
+$auth = "gloosmoke26-rotate:gloosmoke";
 $ip = "p.webshare.io:80";
 $proxy = $ip;
 $proxyauth = $auth;

